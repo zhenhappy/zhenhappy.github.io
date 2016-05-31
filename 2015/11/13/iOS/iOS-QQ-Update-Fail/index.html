@@ -1,0 +1,650 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="qd.myapp.com,无法下载应用,此时无法下载'QQ'" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x95EE;&amp;#x9898;:&amp;#x4ECA;&amp;#x5929;QQ&amp;#x81EA;&amp;#x52A8;&amp;#x5F39;&amp;#x51FA;&amp;#x6D4B;&amp;#x8BD5;&amp;#x7248;&amp;#x9080;&amp;#x8BF7;&amp;#x8BD5;&amp;#x7528;&amp;#x901A;&amp;#x77E5;
+
+&amp;#x70B9;&amp;#x9A6C;&amp;#x4E0A;&amp;#x4F53;&amp;#x9A8C;,&amp;#x8DF3;&amp;#x51FA;&amp;q">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决iOS版QQ更新'无法下载应用'问题">
+<meta property="og:url" content="http://zhenhappy.github.io/2015/11/13/iOS/iOS-QQ-Update-Fail/index.html">
+<meta property="og:site_name" content="Zhen Happy 的博客">
+<meta property="og:description" content="&amp;#x95EE;&amp;#x9898;:&amp;#x4ECA;&amp;#x5929;QQ&amp;#x81EA;&amp;#x52A8;&amp;#x5F39;&amp;#x51FA;&amp;#x6D4B;&amp;#x8BD5;&amp;#x7248;&amp;#x9080;&amp;#x8BF7;&amp;#x8BD5;&amp;#x7528;&amp;#x901A;&amp;#x77E5;
+
+&amp;#x70B9;&amp;#x9A6C;&amp;#x4E0A;&amp;#x4F53;&amp;#x9A8C;,&amp;#x8DF3;&amp;#x51FA;&amp;q">
+<meta property="og:image" content="http://zhenhappy.github.io/2015/11/13/iOS/iOS-QQ-Update-Fail/1447401617667.jpg">
+<meta property="og:image" content="http://zhenhappy.github.io/2015/11/13/iOS/iOS-QQ-Update-Fail/1447401643931.jpg">
+<meta property="og:image" content="http://zhenhappy.github.io/2015/11/13/iOS/iOS-QQ-Update-Fail/1447401842574.jpg">
+<meta property="og:image" content="http://zhenhappy.github.io/2015/11/13/iOS/iOS-QQ-Update-Fail/1447401732774.jpg">
+<meta property="og:image" content="http://zhenhappy.github.io/2015/11/13/iOS/iOS-QQ-Update-Fail/1447468619121.jpg">
+<meta property="og:image" content="http://zhenhappy.github.io/2015/11/13/iOS/iOS-QQ-Update-Fail/1449131436090.jpg">
+<meta property="og:updated_time" content="2016-05-30T10:12:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="解决iOS版QQ更新'无法下载应用'问题">
+<meta name="twitter:description" content="&amp;#x95EE;&amp;#x9898;:&amp;#x4ECA;&amp;#x5929;QQ&amp;#x81EA;&amp;#x52A8;&amp;#x5F39;&amp;#x51FA;&amp;#x6D4B;&amp;#x8BD5;&amp;#x7248;&amp;#x9080;&amp;#x8BF7;&amp;#x8BD5;&amp;#x7528;&amp;#x901A;&amp;#x77E5;
+
+&amp;#x70B9;&amp;#x9A6C;&amp;#x4E0A;&amp;#x4F53;&amp;#x9A8C;,&amp;#x8DF3;&amp;#x51FA;&amp;q">
+<meta name="twitter:image" content="http://zhenhappy.github.io/2015/11/13/iOS/iOS-QQ-Update-Fail/1447401617667.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 解决iOS版QQ更新'无法下载应用'问题 | Zhen Happy 的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Zhen Happy 的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                解决iOS版QQ更新'无法下载应用'问题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-11-13T00:00:00+08:00" content="2015-11-13">
+              2015-11-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x95EE;&#x9898;:<br>&#x4ECA;&#x5929;QQ&#x81EA;&#x52A8;&#x5F39;&#x51FA;&#x6D4B;&#x8BD5;&#x7248;&#x9080;&#x8BF7;&#x8BD5;&#x7528;&#x901A;&#x77E5;</p>
+<p><img src="/2015/11/13/iOS/iOS-QQ-Update-Fail/1447401617667.jpg" alt="" title="1447401617667.jpg"></p>
+<p>&#x70B9;<code>&#x9A6C;&#x4E0A;&#x4F53;&#x9A8C;</code>,&#x8DF3;&#x51FA;<code>&quot;qd.myapp.com&quot;&#x8981;&#x5B89;&#x88C5;&quot;QQ&quot;</code></p>
+<p><img src="/2015/11/13/iOS/iOS-QQ-Update-Fail/1447401643931.jpg" alt="" title="1447401643931.jpg"><a id="more"></a></p>
+<p>&#x70B9;<code>&#x5B89;&#x88C5;</code>,&#x5728;&#x770B;&#x5230;&#x684C;&#x9762;&#x6709;QQ&#x7684;&#x56FE;&#x6807;&#x5728;&#x8F6C;</p>
+<p><img src="/2015/11/13/iOS/iOS-QQ-Update-Fail/1447401842574.jpg" alt="" title="1447401842574.jpg"></p>
+<p>&#x8F6C;&#x4E86;&#x4E00;&#x4F1A;&#x5C31;&#x63D0;&#x793A;<code>&#x65E0;&#x6CD5;&#x4E0B;&#x8F7D;&#x5E94;&#x7528;</code></p>
+<p><img src="/2015/11/13/iOS/iOS-QQ-Update-Fail/1447401732774.jpg" alt="" title="1447401732774.jpg"></p>
+<p>&#x91CD;&#x8BD5;&#x4EE5;&#x4E0A;&#x6B65;&#x9AA4;N&#x6B21;&#x65E0;&#x6548;&#x540E;&#x653E;&#x5F03;,&#x8BF4;&#x662F;&#x8981;&#x8D8A;&#x72F1;&#x624B;&#x673A;&#x624D;&#x80FD;&#x5B89;&#x88C5;,&#x6211;&#x7684;&#x8BBE;&#x5907;&#x662F;iPhone6,9.02&#x5DF2;&#x7ECF;&#x8D8A;&#x72F1;,&#x8FD9;&#x95EE;&#x9898;&#x5DF2;&#x7ECF;&#x4E0D;&#x662F;&#x4ECA;&#x5929;&#x624D;&#x6709;&#x4E86;,&#x6240;&#x4EE5;&#x4ECA;&#x5929;&#x8981;&#x6012;&#x53D1;&#x6B64;&#x6587;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;</p>
+<p>&#x89E3;&#x51B3;&#x601D;&#x8DEF;:<br>&#x624B;&#x673A;&#x8981;&#x5B89;&#x88C5;QQ&#x80AF;&#x5B9A;&#x8981;&#x5148;&#x4E0B;&#x8F7D;&#x5B83;,&#x90A3;&#x4E48;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x6709;QQ&#x7684;&#x4E0B;&#x8F7D;&#x5730;&#x5740;,&#x7528;&#x7535;&#x8111;&#x4E0B;&#x8F7D;&#x4E0B;&#x6765;,&#x901A;&#x8FC7;PP&#x52A9;&#x624B;&#x4E4B;&#x7C7B;&#x7684;&#x53BB;&#x5B89;&#x88C5;&#x5C31;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;,&#x524D;&#x63D0;&#x662F;&#x8981;&#x8BBE;&#x5907;&#x8981;&#x8D8A;&#x72F1;</p>
+<p>&#x5F00;&#x59CB;&#x884C;&#x52A8;:<br>1.&#x5B89;&#x88C5;Charles(&#x4F17;&#x6240;&#x5468;&#x77E5;&#x8FD9;&#x662F;Mac&#x4E0A;&#x5F88;&#x6D41;&#x884C;&#x7684;&#x6293;&#x5305;&#x5DE5;&#x5177;),&#x5F53;&#x7136;&#x4E86;&#x4ED6;&#x4E5F;&#x6709;Windows&#x7248;&#x672C;,&#x5982;&#x679C;&#x662F;Windows&#x7528;&#x6237;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5C31;&#x662F;&#x7528;Fiddler2,&#x8FD9;&#x91CC;&#x7528;Windows&#x7248;&#x7684;Charles&#x6765;&#x505A;&#x6F14;&#x793A;,&#x539F;&#x7406;&#x90FD;&#x4E00;&#x6837;,&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#x5728;&#x8FD9;<a href="http://www.charlesproxy.com/download/" target="_blank" rel="external">http://www.charlesproxy.com/download/</a>,&#x65E0;&#x9700;&#x6B63;&#x7248;&#x7684;,&#x514D;&#x8D39;&#x7684;&#x5C31;&#x591A;&#x7B49;10&#x79D2;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;<br>2.&#x9996;&#x5148;&#x6211;&#x4EEC;&#x8981;&#x4E86;&#x89E3;&#x82F9;&#x679C;&#x81EA;&#x4ECE;iOS8&#x4EE5;&#x4E0A;&#x66F4;&#x65B0;ipa&#x5305;&#x5C31;&#x5F3A;&#x5236;&#x8981;&#x6C42;&#x91C7;&#x7528;https&#x534F;&#x8BAE;<br>&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x8981;&#x80FD;&#x5BF9;https&#x8FDB;&#x884C;&#x6293;&#x5305;,https&#x662F;&#x52A0;&#x5BC6;&#x94FE;&#x63A5;&#x7406;&#x8BBA;&#x4E0A;&#x662F;&#x4E0D;&#x80FD;&#x6293;&#x5305;&#x7684;,&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x4F2A;&#x8BC1;&#x4E66;&#x8FDB;&#x884C;&#x6293;&#x5305;&#x662F;&#x53EF;&#x4EE5;&#x7684;.<br>&#x6839;&#x636E;<a href="http://www.charlesproxy.com/documentation/using-charles/ssl-certificates/" target="_blank" rel="external">&#x5B98;&#x65B9;&#x8BF4;&#x660E;</a>&#x5728;iOS&#x8BBE;&#x5907;&#x4E0A;&#x7528;Safari&#x6253;&#x5F00;&#x8FD9;&#x4E2A;&#x5730;&#x5740;<a href="http://www.charlesproxy.com/getssl/" target="_blank" rel="external">http://www.charlesproxy.com/getssl/</a>&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x8DF3;&#x51FA;&#x5B89;&#x88C5;&#x8BC1;&#x4E66;&#x63D0;&#x793A;,&#x8F93;&#x5165;&#x5BC6;&#x7801;&#x5B89;&#x88C5;&#x5373;&#x53EF;.<br>&#x4F46;&#x662F;&#x636E;&#x7F51;&#x53CB;&#x53CD;&#x5E94;&#x6253;&#x5F00;&#x8FD9;&#x4E2A;&#x8FD9;&#x4E2A;&#x7F51;&#x5740;&#x540E;&#x6CA1;&#x6709;&#x5F39;&#x51FA;&#x8BC1;&#x4E66;&#x5B89;&#x88C5;&#x754C;&#x9762;,&#x8FD9;&#x91CC;&#x8BF4;&#x660E;&#x4E0B;&#x539F;&#x56E0;,&#x8FD9;&#x4E2A;&#x8BC1;&#x4E66;&#x662F;&#x901A;&#x8FC7;&#x6211;&#x4EEC;&#x7535;&#x8111;&#x4E0A;&#x7684;Charles&#x6765;&#x5B89;&#x88C5;&#x7684;,&#x6240;&#x4EE5;&#x5728;&#x5B89;&#x88C5;&#x8BC1;&#x4E66;&#x4E4B;&#x524D;&#x8981;&#x5148;&#x6253;&#x5F00;<code>&#x8BBE;&#x7F6E;</code>-&gt;<code>Wi-Fi</code>&#x8BBE;&#x7F6E;&#x4EE3;&#x7406;&#x4E3A;&#x7535;&#x8111;&#x7684;IP,&#x8FD9;&#x6837;&#x624D;&#x80FD;&#x6B63;&#x5E38;&#x7684;&#x5F39;&#x51FA;&#x8BC1;&#x4E66;&#x5B89;&#x88C5;&#x754C;&#x9762;<br>3.&#x88C5;&#x597D;&#x8BC1;&#x4E66;&#x5230;QQ&#x7684;<code>&#x8BBE;&#x7F6E;</code>-&gt;<code>&#x5173;&#x4E8E;QQ&#x4E0E;&#x5E2E;&#x52A9;</code>-&gt;<code>&#x7248;&#x672C;&#x66F4;&#x65B0;</code>&#x91CD;&#x65B0;&#x83B7;&#x53D6;&#x66F4;&#x65B0;,&#x5728;Charles&#x8FD9;&#x8FB9;&#x70B9;&#x5141;&#x8BB8;<code>Allow</code>&#x540C;&#x610F;&#x8FDC;&#x7A0B;&#x8BBE;&#x5907;&#x6293;&#x5305;</p>
+<p><img src="/2015/11/13/iOS/iOS-QQ-Update-Fail/1447468619121.jpg" alt="" title="1447468619121.jpg"></p>
+<p>&#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6293;&#x5305;&#x7ED3;&#x679C;&#x4E86;,&#x5728;&#x53F3;&#x4FA7;&#x7684;URL&#x90A3;&#x91CC;&#x7684;<a href="https://qd.myapp.com/myapp/qqteam/iPhoneQQ/iPhoneQQ_6.0.0.121.ipa" target="_blank" rel="external"><code>https://qd.myapp.com/myapp/qqteam/iPhoneQQ/iPhoneQQ_6.0.0.121.ipa</code></a>&#x5C31;&#x662F;iPhoneQQ6.0&#x7684;ipa&#x5305;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#x4E86;<br>4.&#x4E0B;&#x8F7D;&#x5230;&#x7535;&#x8111;&#x540E;&#x7528;PP&#x52A9;&#x624B;&#x5B89;&#x88C5;&#x5C31;&#x641E;&#x5B9A;&#x4E86;</p>
+<p>&#x540E;&#x7EED;:<br>&#x540C;&#x7406;&#x53D1;&#x73B0;QQ&#x97F3;&#x4E50;&#x4E5F;&#x6709;&#x4E0D;&#x80FD;&#x5347;&#x7EA7;&#x7684;&#x95EE;&#x9898;,&#x6BD4;QQ&#x66F4;&#x5751;&#x7239;,QQ&#x8FD8;&#x80FD;&#x51FA;&#x73B0;&#x6B63;&#x5728;&#x4E0B;&#x8F7D;&#x4EC0;&#x4E48;&#x7684;&#x6700;&#x540E;&#x7ECF;&#x8FC7;N&#x6B21;&#x5C1D;&#x8BD5;&#x5931;&#x8D25;,QQ&#x97F3;&#x4E50;&#x5C31;&#x4EC0;&#x4E48;&#x90FD;&#x6CA1;&#x6709;&#x63D0;&#x793A;,&#x70B9;&#x4E0B;&#x53BB;&#x82E5;&#x65E0;&#x5176;&#x4E8B;&#x4E00;&#x6837;,&#x4E00;&#x70B9;&#x53CD;&#x5E94;&#x90FD;&#x6CA1;&#x6709;&#x3002;<br>&#x4E0D;&#x8FC7;&#x77E5;&#x9053;&#x65B9;&#x6CD5;&#x5C31;&#x4E0D;&#x6015;,&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x7C7B;&#x4F3C;,&#x4E0D;&#x8FC7;&#x6709;&#x4E00;&#x70B9;&#x70B9;&#x4E0D;&#x540C;,&#x5C31;&#x662F;&#x521A;&#x8BF4;&#x4E86;,QQ&#x97F3;&#x4E50;&#x70B9;&#x4E0B;&#x53BB;&#x4E00;&#x70B9;&#x53CD;&#x5E94;&#x90FD;&#x6CA1;&#x6709;,&#x4E5F;&#x5C31;&#x662F;&#x8BF4;QQ&#x97F3;&#x4E50;&#x5B83;&#x6839;&#x672C;&#x8FD8;&#x6CA1;&#x5230;&#x8BF7;&#x6C42;ipa&#x5305;&#x4E0B;&#x8F7D;&#x90A3;&#x6B65;,&#x90A3;&#x8BE5;&#x5982;&#x4F55;&#x6293;&#x5B83;&#x7684;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#x5462;?<br>&#x8BF4;&#x5230;&#x8FD9;&#x8FB9;&#x6211;&#x4EEC;&#x5148;&#x7B80;&#x5355;&#x7684;&#x4E86;&#x89E3;&#x4E0B;iOS&#x5927;&#x4F01;&#x4E1A;&#x8BC1;&#x4E66;&#x7684;&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x3002;&#x82F9;&#x679C;&#x5927;&#x4F01;&#x4E1A;&#x8BC1;&#x4E66;&#x662F;&#x53EF;&#x4EE5;&#x4E0D;&#x901A;&#x8FC7;AppStore&#x5B89;&#x88C5;&#x5230;iOS&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x3002;&#x7406;&#x8BBA;&#x4E0A;&#x6211;&#x4EEC;&#x6B63;&#x5E38;&#x70B9;&#x5347;&#x7EA7;&#x662F;&#x53EF;&#x4EE5;&#x5B89;&#x88C5;&#x6210;&#x529F;&#x7684;,&#x4E3A;&#x4EC0;&#x4E48;QQ&#x548C;QQ&#x97F3;&#x4E50;&#x5B89;&#x88C5;&#x4E0D;&#x6210;&#x529F;&#x3002;&#x8FD9;&#x8FB9;&#x539F;&#x56E0;&#x53EF;&#x80FD;&#x51FA;&#x5728;&#x4ED6;&#x4EEC;&#x8BC1;&#x4E66;&#x4E0A;,&#x5177;&#x4F53;&#x662F;&#x4EC0;&#x4E48;&#x95EE;&#x9898;,&#x6211;&#x4E0D;&#x662F;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x4E0D;&#x592A;&#x6E05;&#x695A;&#x3002;&#x4F46;&#x662F;&#x4ECA;&#x5929;&#x6211;&#x4EEC;&#x8981;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;&#x662F;&#x5982;&#x4F55;&#x6293;&#x5230;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#x3002;&#x9996;&#x5148;iOS&#x5728;&#x8BF7;&#x6C42;&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;&#x7684;&#x65F6;&#x5019;&#x5176;&#x5B9E;&#x662F;&#x5148;&#x8BF7;&#x6C42;&#x4E00;&#x4E2A;plist&#x6587;&#x4EF6;,&#x8FD9;&#x662F;&#x4E00;&#x4E2A;xml&#x6587;&#x4EF6;,&#x91CC;&#x9762;&#x5305;&#x542B;&#x5B89;&#x88C5;&#x5305;&#x7684;&#x4E00;&#x4E9B;&#x4FE1;&#x606F;,&#x5176;&#x4E2D;&#x5C31;&#x5305;&#x62EC;&#x6211;&#x4EEC;&#x60F3;&#x77E5;&#x9053;&#x7684;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#x3002;&#x90A3;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x539F;&#x7406;&#x540E;&#x6211;&#x4EEC;&#x5C31;&#x5F00;&#x59CB;&#x6293;&#x8FD9;&#x4E2A;plist&#x6587;&#x4EF6;,&#x7ECF;&#x8FC7;&#x6211;&#x6293;&#x5305;&#x5C1D;&#x8BD5;&#x5F97;&#x77E5;<code>https://d3g.qq.com</code>&#x5F00;&#x5934;&#x662F;&#x5C31;&#x662F;plist&#x6587;&#x4EF6;&#x7684;&#x5730;&#x5740;&#x4E86;,&#x53F3;&#x952E;&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x9009;&#x62E9;<code>Enable SSL Proxying</code>&#x542F;&#x7528;SSL&#x6293;&#x5305;,&#x524D;&#x63D0;&#x662F;&#x548C;&#x6293;QQ&#x7684;&#x6B65;&#x9AA4;&#x4E00;&#x6837;,&#x8981;&#x6709;&#x5B89;&#x88C5;&#x4F2A;&#x8BC1;&#x4E66;,&#x624D;&#x80FD;&#x6293;https&#x7684;&#x5730;&#x5740;&#x3002;</p>
+<p><img src="/2015/11/13/iOS/iOS-QQ-Update-Fail/1449131436090.jpg" alt="" title="1449131436090.jpg"></p>
+<p>&#x6293;&#x5305;&#x7ED3;&#x679C;&#x5982;&#x4E0A;&#x56FE;,&#x5C06;&#x662F;plist&#x6587;&#x4EF6;&#x4E0B;&#x8F7D;&#x540E;&#x7528;&#x8BB0;&#x4E8B;&#x672C;&#x6253;&#x5F00;,&#x6B63;&#x5E38;&#x4EBA;&#x7784;&#x4E00;&#x773C;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#x4E86;</p>
+<pre><code>&lt;dict&gt;
+    &lt;key&gt;kind&lt;/key&gt;
+    &lt;string&gt;software-package&lt;/string&gt;
+    &lt;key&gt;url&lt;/key&gt;
+    &lt;string&gt;http://d3g.qq.com/musicapp/kge/508/QQMusic5.8build18_002.ipa&lt;/string&gt;
+&lt;/dict&gt;
+</code></pre><p>&#x5305;&#x542B;ipa&#x7684;&#x90A3;&#x4E2A;url&#x5C31;&#x662F;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#x4E86;,&#x5269;&#x4E0B;&#x7684;&#x6B65;&#x9AA4;&#x4E0D;&#x591A;&#x8BF4;,&#x548C;QQ&#x4E00;&#x6837;&#x3002;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/13/React/react-tutorial-03/" rel="next" title="React快速入门教程三之组件状态State">
+                <i class="fa fa-chevron-left"></i> React快速入门教程三之组件状态State
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/24/Android/Android-Studio-The-following-classes-could-not-be-found/" rel="prev" title="解决Android Studio默认AppTheme主题找不到的问题">
+                解决Android Studio默认AppTheme主题找不到的问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Zhen Happy" />
+          <p class="site-author-name" itemprop="name">Zhen Happy</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhen Happy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

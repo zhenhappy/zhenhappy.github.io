@@ -1,0 +1,672 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,Annotations,Eclipse" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x914D;&amp;#x7F6E;&amp;#x6B65;&amp;#x9AA4;
+&amp;#x521B;&amp;#x5EFA;&amp;#x9879;&amp;#x76EE;
+&amp;#x6DFB;&amp;#x52A0;&amp;#x6240;&amp;#x9700;jar&amp;#x5305;
+&amp;#x4FEE;&amp;#x6539;&amp;#x914D;&amp;#x7F6E;&amp;#x6587;&amp;#x4EF6;
+&amp;#x5728;&amp;#x7A0B;&amp;#x5E8F;&amp;#x4E2D;&amp;#x4F7F;&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AndroidAnnotations框架入门教程二之Eclipse环境配置">
+<meta property="og:url" content="http://zhenhappy.github.io/2015/10/12/Android/Android-Annotations-2-Eclipse/index.html">
+<meta property="og:site_name" content="Zhen Happy 的博客">
+<meta property="og:description" content="&amp;#x914D;&amp;#x7F6E;&amp;#x6B65;&amp;#x9AA4;
+&amp;#x521B;&amp;#x5EFA;&amp;#x9879;&amp;#x76EE;
+&amp;#x6DFB;&amp;#x52A0;&amp;#x6240;&amp;#x9700;jar&amp;#x5305;
+&amp;#x4FEE;&amp;#x6539;&amp;#x914D;&amp;#x7F6E;&amp;#x6587;&amp;#x4EF6;
+&amp;#x5728;&amp;#x7A0B;&amp;#x5E8F;&amp;#x4E2D;&amp;#x4F7F;&amp;">
+<meta property="og:image" content="http://zhenhappy.github.io/2015/10/12/Android/Android-Annotations-2-Eclipse/1444637579305.jpg">
+<meta property="og:image" content="http://zhenhappy.github.io/2015/10/12/Android/Android-Annotations-2-Eclipse/1444638059269.jpg">
+<meta property="og:image" content="http://zhenhappy.github.io/2015/10/12/Android/Android-Annotations-2-Eclipse/1444638223297.jpg">
+<meta property="og:image" content="http://zhenhappy.github.io/2015/10/12/Android/Android-Annotations-2-Eclipse/1444638325506.jpg">
+<meta property="og:image" content="http://zhenhappy.github.io/2015/10/12/Android/Android-Annotations-2-Eclipse/1444639362326.jpg">
+<meta property="og:image" content="http://zhenhappy.github.io/2015/10/12/Android/Android-Annotations-2-Eclipse/1444703713801.jpg">
+<meta property="og:updated_time" content="2016-05-30T10:08:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AndroidAnnotations框架入门教程二之Eclipse环境配置">
+<meta name="twitter:description" content="&amp;#x914D;&amp;#x7F6E;&amp;#x6B65;&amp;#x9AA4;
+&amp;#x521B;&amp;#x5EFA;&amp;#x9879;&amp;#x76EE;
+&amp;#x6DFB;&amp;#x52A0;&amp;#x6240;&amp;#x9700;jar&amp;#x5305;
+&amp;#x4FEE;&amp;#x6539;&amp;#x914D;&amp;#x7F6E;&amp;#x6587;&amp;#x4EF6;
+&amp;#x5728;&amp;#x7A0B;&amp;#x5E8F;&amp;#x4E2D;&amp;#x4F7F;&amp;">
+<meta name="twitter:image" content="http://zhenhappy.github.io/2015/10/12/Android/Android-Annotations-2-Eclipse/1444637579305.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> AndroidAnnotations框架入门教程二之Eclipse环境配置 | Zhen Happy 的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Zhen Happy 的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                AndroidAnnotations框架入门教程二之Eclipse环境配置
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-10-12T00:00:00+08:00" content="2015-10-12">
+              2015-10-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="&#x914D;&#x7F6E;&#x6B65;&#x9AA4;"><a href="#&#x914D;&#x7F6E;&#x6B65;&#x9AA4;" class="headerlink" title="&#x914D;&#x7F6E;&#x6B65;&#x9AA4;"></a>&#x914D;&#x7F6E;&#x6B65;&#x9AA4;</h1><ol>
+<li>&#x521B;&#x5EFA;&#x9879;&#x76EE;</li>
+<li>&#x6DFB;&#x52A0;&#x6240;&#x9700;jar&#x5305;</li>
+<li>&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</li>
+<li>&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x4F7F;&#x7528;Annotation</li>
+<li>&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#x6D4B;&#x8BD5;</li>
+</ol>
+<h2 id="1-&#x521B;&#x5EFA;&#x9879;&#x76EE;"><a href="#1-&#x521B;&#x5EFA;&#x9879;&#x76EE;" class="headerlink" title="1. &#x521B;&#x5EFA;&#x9879;&#x76EE;"></a>1. &#x521B;&#x5EFA;&#x9879;&#x76EE;</h2><p><img src="/2015/10/12/Android/Android-Annotations-2-Eclipse/1444637579305.jpg" alt="" title="1444637579305.jpg"><br>&#x4EC5;&#x4F9B;&#x53C2;&#x8003;,&#x4E0D;&#x5FC5;&#x5B8C;&#x5168;&#x4E00;&#x6837;<br><a id="more"></a></p>
+<h2 id="2-&#x6DFB;&#x52A0;&#x6240;&#x9700;jar&#x5305;"><a href="#2-&#x6DFB;&#x52A0;&#x6240;&#x9700;jar&#x5305;" class="headerlink" title="2. &#x6DFB;&#x52A0;&#x6240;&#x9700;jar&#x5305;"></a>2. &#x6DFB;&#x52A0;&#x6240;&#x9700;jar&#x5305;</h2><p>&#x9996;&#x5148;&#x53BB;<a href="https://github.com/excilys/androidannotations/wiki/Download" target="_blank" rel="external">&#x8FD9;&#x91CC;</a>&#x4E0B;&#x8F7D;&#x6700;&#x65B0;&#x7684;jar&#x5305;<br>&#x4E0B;&#x8F7D;&#x5B8C;&#x89E3;&#x538B;&#x540E;&#x4F1A;&#x6709;&#x4E24;&#x4E2A;jar&#x5305;<br>androidannotations-api-3.3.2.jar&#x548C;androidannotations-3.3.2.jar<br>&#x7B80;&#x5355;&#x89E3;&#x91CA;&#x4E0B;&#x8FD9;&#x4E24;&#x4E2A;&#x4F5C;&#x7528;<br>androidannotations-api-3.3.2.jar&#x8FD9;&#x4E2A;&#x662F;&#x4E3B;&#x8981;&#x7684;jar&#x5305;,&#x5C06;&#x8FD9;&#x4E2A;&#x5305;&#x653E;&#x5230;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4E0B;&#x7684;libs&#x76EE;&#x5F55;&#x4E0B;<br>androidannotations-3.3.2.jar&#x8FD9;&#x4E2A;&#x662F;&#x7ED9;&#x7F16;&#x8BD1;&#x5668;&#x7528;&#x7684;,&#x56E0;&#x6B64;&#x5728;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4E0B;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;compile-libs&#x76EE;&#x5F55;,&#x653E;&#x5230;&#x8FD9;&#x91CC;<br>android-support-v4.jar&#x662F;&#x521B;&#x5EFA;&#x9879;&#x76EE;&#x81EA;&#x5E26;&#x7684;<br>&#x9879;&#x76EE;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x662F;&#x8FD9;&#x6837;&#x7684;<br><img src="/2015/10/12/Android/Android-Annotations-2-Eclipse/1444638059269.jpg" alt="" title="1444638059269.jpg"><br>&#x63A5;&#x4E0B;&#x6765;&#x6253;&#x5F00;&#x9879;&#x76EE;&#x5C5E;&#x6027;,&#x627E;&#x5230;Java Compiler-&gt;Annotation Processing,&#x5C06;&#x53F3;&#x8FB9;&#x7684;&#x6253;&#x52FE;&#x542F;&#x7528;<br><img src="/2015/10/12/Android/Android-Annotations-2-Eclipse/1444638223297.jpg" alt="" title="1444638223297.jpg"><br>&#x518D;&#x5230;Factory Path&#x4E2D;&#x542F;&#x7528;,&#x5E76;&#x6DFB;&#x52A0;compile-libs&#x4E2D;&#x7684;jar&#x5305;<br><img src="/2015/10/12/Android/Android-Annotations-2-Eclipse/1444638325506.jpg" alt="" title="1444638325506.jpg"><br>&#x8FD9;&#x6837;&#x6DFB;&#x52A0;jar&#x5305;&#x5C31;&#x5B8C;&#x6210;&#x4E86;</p>
+<h2 id="3-&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;"><a href="#3-&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;" class="headerlink" title="3. &#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;"></a>3. &#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h2><p>&#x6253;&#x5F00;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4E0B;&#x7684;AndroidManifest.xml&#x6587;&#x4EF6;<br>&#x5728;.MainActivity&#x540E;&#x9762;&#x52A0;&#x4E00;&#x4E2A;&#x4E0B;&#x5212;&#x7EBF;&#x201D;_&#x201D;<br>&#x539F;&#x6765;&#x662F;</p>
+<pre><code>&lt;activity
+        android:name=&quot;.MainActivity&quot;
+        android:label=&quot;@string/app_name&quot; &gt;
+</code></pre><p>&#x6539;&#x6210;</p>
+<pre><code>&lt;activity
+        android:name=&quot;.MainActivity_&quot;
+        android:label=&quot;@string/app_name&quot; &gt;
+</code></pre><p><img src="/2015/10/12/Android/Android-Annotations-2-Eclipse/1444639362326.jpg" alt="" title="1444639362326.jpg"><br>&#x6539;&#x5B8C;&#x4E4B;&#x540E;&#x8981;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;,&#x9009;&#x62E9;&#x83DC;&#x5355;&#x7684;Project-&gt;Clean<br>&#x81F3;&#x6B64;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x90E8;&#x5206;&#x5C31;&#x5B8C;&#x6210;&#x4E86;,&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x6DFB;&#x52A0;Annotation&#x6D4B;&#x8BD5;</p>
+<h2 id="4-&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x4F7F;&#x7528;Annotation"><a href="#4-&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x4F7F;&#x7528;Annotation" class="headerlink" title="4. &#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x4F7F;&#x7528;Annotation"></a>4. &#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x4F7F;&#x7528;Annotation</h2><p>&#x6253;&#x5F00;MainActivity.java&#x6539;&#x6210;&#x5982;&#x4E0B;</p>
+<pre><code>package com.example.androidannotation;
+
+import org.androidannotations.annotations.EActivity;
+import android.app.Activity;
+import android.os.Bundle;
+
+@EActivity(R.layout.activity_main)
+public class MainActivity extends Activity {
+
+  @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_main);
+    }
+}
+</code></pre><p>&#x4E3B;&#x8981;&#x4FEE;&#x6539;&#x4E24;&#x4E2A;&#x5730;&#x65B9;<br>&#x4E00;&#x4E2A;&#x662F;<code>setContentView(R.layout.activity_main);</code>&#x8FD9;&#x53E5;&#x8BDD;&#x6CE8;&#x91CA;&#x6389;<br>&#x53E6;&#x4E00;&#x4E2A;&#x5C31;&#x662F;&#x5728;MainActivity&#x7C7B;&#x4E0A;&#x65B9;&#x52A0;<code>@EActivity(R.layout.activity_main)</code>,&#x8FD9;&#x53E5;&#x8BDD;&#x5C31;&#x4EE3;&#x66FF;&#x4E86;<code>setContentView(R.layout.activity_main);</code>&#x7684;&#x4F5C;&#x7528;</p>
+<h2 id="5-&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#x6D4B;&#x8BD5;"><a href="#5-&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#x6D4B;&#x8BD5;" class="headerlink" title="5. &#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#x6D4B;&#x8BD5;"></a>5. &#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#x6D4B;&#x8BD5;</h2><p>&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;&#x5E94;&#x8BE5;&#x662F;&#x548C;&#x6CA1;&#x7528;annotation&#x7684;&#x6548;&#x679C;&#x4E00;&#x6837;&#x7684;<br><img src="/2015/10/12/Android/Android-Annotations-2-Eclipse/1444703713801.jpg" alt="" title="1444703713801.jpg"></p>
+<h1 id="&#x9879;&#x76EE;Demo"><a href="#&#x9879;&#x76EE;Demo" class="headerlink" title="&#x9879;&#x76EE;Demo"></a>&#x9879;&#x76EE;Demo</h1><p><a href="https://github.com/zhenhappy/AndroidAnnotation_Demo" target="_blank" rel="external">https://github.com/zhenhappy/AndroidAnnotation_Demo</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/Annotations/" rel="tag">#Annotations</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/12/Hardware/TL-WR840N-Router-Fix/" rel="next" title="TL-WR840N救砖手记">
+                <i class="fa fa-chevron-left"></i> TL-WR840N救砖手记
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/10/13/Android/Android-Annotations-3-Android-Studio/" rel="prev" title="AndroidAnnotations框架入门教程三之Android Studio环境配置">
+                AndroidAnnotations框架入门教程三之Android Studio环境配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Zhen Happy" />
+          <p class="site-author-name" itemprop="name">Zhen Happy</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置步骤"><span class="nav-number">1.</span> <span class="nav-text">配置步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-创建项目"><span class="nav-number">1.1.</span> <span class="nav-text">1. 创建项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-添加所需jar包"><span class="nav-number">1.2.</span> <span class="nav-text">2. 添加所需jar包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-修改配置文件"><span class="nav-number">1.3.</span> <span class="nav-text">3. 修改配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-在程序中使用Annotation"><span class="nav-number">1.4.</span> <span class="nav-text">4. 在程序中使用Annotation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-运行程序测试"><span class="nav-number">1.5.</span> <span class="nav-text">5. 运行程序测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目Demo"><span class="nav-number">2.</span> <span class="nav-text">项目Demo</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhen Happy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,650 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Java,Reflect,getGenericType,getMethod,invoke" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x8981;&amp;#x83B7;&amp;#x53D6;&amp;#x5BF9;&amp;#x8C61;&amp;#x7684;&amp;#x6240;&amp;#x6709;&amp;#x5C5E;&amp;#x6027;&amp;#x53EF;&amp;#x4EE5;&amp;#x4F7F;&amp;#x7528;getDeclaredFields()&amp;#x65B9;&amp;#x6CD5;&amp;#x4F1A;&amp;#x8FD4;&amp;#x56DE;&amp;#x4E00;&amp;#x4E2A;Field&amp;#x6570;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java遍历对象所有属性">
+<meta property="og:url" content="http://zhenhappy.github.io/2015/10/26/Java/Java-Each-Properties/index.html">
+<meta property="og:site_name" content="Zhen Happy 的博客">
+<meta property="og:description" content="&amp;#x8981;&amp;#x83B7;&amp;#x53D6;&amp;#x5BF9;&amp;#x8C61;&amp;#x7684;&amp;#x6240;&amp;#x6709;&amp;#x5C5E;&amp;#x6027;&amp;#x53EF;&amp;#x4EE5;&amp;#x4F7F;&amp;#x7528;getDeclaredFields()&amp;#x65B9;&amp;#x6CD5;&amp;#x4F1A;&amp;#x8FD4;&amp;#x56DE;&amp;#x4E00;&amp;#x4E2A;Field&amp;#x6570;">
+<meta property="og:updated_time" content="2016-05-30T10:13:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java遍历对象所有属性">
+<meta name="twitter:description" content="&amp;#x8981;&amp;#x83B7;&amp;#x53D6;&amp;#x5BF9;&amp;#x8C61;&amp;#x7684;&amp;#x6240;&amp;#x6709;&amp;#x5C5E;&amp;#x6027;&amp;#x53EF;&amp;#x4EE5;&amp;#x4F7F;&amp;#x7528;getDeclaredFields()&amp;#x65B9;&amp;#x6CD5;&amp;#x4F1A;&amp;#x8FD4;&amp;#x56DE;&amp;#x4E00;&amp;#x4E2A;Field&amp;#x6570;">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Java遍历对象所有属性 | Zhen Happy 的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Zhen Happy 的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Java遍历对象所有属性
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-10-26T00:00:00+08:00" content="2015-10-26">
+              2015-10-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x8981;&#x83B7;&#x53D6;&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>getDeclaredFields()</code><br>&#x65B9;&#x6CD5;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;<code>Field</code>&#x6570;&#x7EC4;<br>&#x904D;&#x5386;&#x8FD9;&#x4E2A;&#x6570;&#x7EC4;&#x51E0;&#x4E2A;&#x904D;&#x5386;&#x6240;&#x6709;&#x5C5E;&#x6027;<br>&#x6CE8;&#x610F;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4F1A;&#x629B;&#x51FA;4&#x4E2A;&#x5F02;&#x5E38;<br>&#x7136;&#x540E;&#x6839;&#x636E;&#x5C5E;&#x6027;&#x7684;&#x7C7B;&#x578B;&#x9009;&#x62E9;&#x6267;&#x884C;&#x5BF9;&#x5E94;&#x7684;&#x5185;&#x5BB9;<a id="more"></a></p>
+<pre><code>public static void eachProperties(Object model) throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+    Field[] field = model.getClass().getDeclaredFields(); //&#x83B7;&#x53D6;&#x5B9E;&#x4F53;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;&#xFF0C;&#x8FD4;&#x56DE;Field&#x6570;&#x7EC4;
+    for(int j=0 ; j&lt;field.length ; j++){ //&#x904D;&#x5386;&#x6240;&#x6709;&#x5C5E;&#x6027;
+        String name = field[j].getName(); //&#x83B7;&#x53D6;&#x5C5E;&#x6027;&#x7684;&#x540D;&#x5B57;
+
+        System.out.println(&quot;attribute name:&quot;+name);
+        name = name.substring(0,1).toUpperCase()+name.substring(1); //&#x5C06;&#x5C5E;&#x6027;&#x7684;&#x9996;&#x5B57;&#x7B26;&#x5927;&#x5199;&#xFF0C;&#x65B9;&#x4FBF;&#x6784;&#x9020;get&#xFF0C;set&#x65B9;&#x6CD5;
+        String type = field[j].getGenericType().toString(); //&#x83B7;&#x53D6;&#x5C5E;&#x6027;&#x7684;&#x7C7B;&#x578B;
+        if(type.equals(&quot;class java.lang.String&quot;)){ //&#x5982;&#x679C;type&#x662F;&#x7C7B;&#x7C7B;&#x578B;&#xFF0C;&#x5219;&#x524D;&#x9762;&#x5305;&#x542B;&quot;class &quot;&#xFF0C;&#x540E;&#x9762;&#x8DDF;&#x7C7B;&#x540D;
+          ...
+        }
+        if(type.equals(&quot;class java.lang.Integer&quot;)){
+          ...
+        }
+        if(type.equals(&quot;class java.lang.Short&quot;)){
+          ...
+        }
+        if(type.equals(&quot;class java.lang.Double&quot;)){
+          ...
+        }
+        if(type.equals(&quot;class java.lang.Boolean&quot;)){
+          ...
+        }
+        if(type.equals(&quot;class java.util.Date&quot;)){
+          ...
+        }
+    }
+}
+</code></pre><p>&#x5177;&#x4F53;&#x6267;&#x884C;&#x7684;&#x5185;&#x5BB9;&#x5C31;&#x662F;&#x91CD;&#x70B9;&#x4E86;<br>&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x6A21;&#x578B;&#x7684;&#x5C5E;&#x6027;&#x90FD;&#x4F1A;&#x6709;&#x5BF9;&#x5E94;&#x7684;getter&#x548C;setter&#x65B9;&#x6CD5;<br>&#x53EA;&#x9700;&#x8981;&#x5F97;&#x5230;&#x5BF9;&#x5E94;&#x7684;getter&#x548C;setter&#x65B9;&#x6CD5;&#x5373;&#x53EF;&#x83B7;&#x53D6;&#x548C;&#x8BBE;&#x7F6E;&#x5C5E;&#x6027;<br>&#x8FD9;&#x91CC;&#x5C31;&#x9700;&#x8981;&#x7528;&#x5230;<code>getMethod</code>&#x65B9;&#x6CD5;</p>
+<h2 id="&#x83B7;&#x5F97;getter&#x65B9;&#x6CD5;"><a href="#&#x83B7;&#x5F97;getter&#x65B9;&#x6CD5;" class="headerlink" title="&#x83B7;&#x5F97;getter&#x65B9;&#x6CD5;"></a>&#x83B7;&#x5F97;getter&#x65B9;&#x6CD5;</h2><p>&#x65B9;&#x6CD5;&#x6709;&#x5206;&#x5E26;&#x53C2;&#x6570;&#x548C;&#x4E0D;&#x5E26;&#x53C2;&#x6570;,&#x6211;&#x4EEC;&#x77E5;&#x9053;getter&#x65B9;&#x6CD5;&#x662F;&#x4E0D;&#x5E26;&#x53C2;&#x6570;&#x7684;<br>&#x83B7;&#x5F97;getter&#x65B9;&#x6CD5;&#x5982;&#x4E0B;</p>
+<pre><code>Method m = model.getClass().getMethod(&quot;get&quot;+name);
+</code></pre><h2 id="&#x83B7;&#x5F97;setter&#x65B9;&#x6CD5;"><a href="#&#x83B7;&#x5F97;setter&#x65B9;&#x6CD5;" class="headerlink" title="&#x83B7;&#x5F97;setter&#x65B9;&#x6CD5;"></a>&#x83B7;&#x5F97;setter&#x65B9;&#x6CD5;</h2><p>&#x5982;&#x679C;&#x662F;&#x5E26;&#x53C2;&#x6570;&#x7684;setter&#x65B9;&#x6CD5;,&#x5C31;&#x5E94;&#x8BE5;&#x628A;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x505A;&#x5C01;&#x88C5;&#x6210;&#x4E00;&#x4E2A;Class&lt;?&gt;&#x6CDB;&#x578B;&#x6570;&#x7EC4;&#x4F20;&#x5165;<code>getMethod</code>&#x65B9;&#x6CD5;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;<br>&#x4F8B;&#x5982;&#x53C2;&#x6570;&#x662F;String&#x7C7B;&#x578B;&#x7684;setter&#x65B9;&#x6CD5;&#x5982;&#x4E0B;</p>
+<pre><code>Method m = model.getClass().getMethod(&quot;set&quot;+name, new Class[] {String.class});
+</code></pre><h2 id="&#x6267;&#x884C;getter&#x65B9;&#x6CD5;"><a href="#&#x6267;&#x884C;getter&#x65B9;&#x6CD5;" class="headerlink" title="&#x6267;&#x884C;getter&#x65B9;&#x6CD5;"></a>&#x6267;&#x884C;getter&#x65B9;&#x6CD5;</h2><pre><code>String value = (String) m.invoke(model);
+</code></pre><h2 id="&#x6267;&#x884C;setter&#x65B9;&#x6CD5;"><a href="#&#x6267;&#x884C;setter&#x65B9;&#x6CD5;" class="headerlink" title="&#x6267;&#x884C;setter&#x65B9;&#x6CD5;"></a>&#x6267;&#x884C;setter&#x65B9;&#x6CD5;</h2><pre><code>m.invoke(model,new Object[] {new String(&quot;new value&quot;)});
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag">#Java</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/21/Git/git-commit--amend/" rel="next" title="git修改已经提交的注释">
+                <i class="fa fa-chevron-left"></i> git修改已经提交的注释
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/10/28/Resource/meteor/" rel="prev" title="Meteor常用资源">
+                Meteor常用资源 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Zhen Happy" />
+          <p class="site-author-name" itemprop="name">Zhen Happy</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#获得getter方法"><span class="nav-number">1.</span> <span class="nav-text">获得getter方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获得setter方法"><span class="nav-number">2.</span> <span class="nav-text">获得setter方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行getter方法"><span class="nav-number">3.</span> <span class="nav-text">执行getter方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行setter方法"><span class="nav-number">4.</span> <span class="nav-text">执行setter方法</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhen Happy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
